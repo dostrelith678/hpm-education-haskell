@@ -2,3 +2,7 @@
 
 * [Introduction to Haskell](README.md)
 
+## Introduction
+
+* [Introduction](introduction/introduction.md)
+
