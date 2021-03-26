@@ -5,4 +5,5 @@
 ## Introduction
 
 * [Introduction](introduction/introduction.md)
+* [Functions](introduction/functions.md)
 
