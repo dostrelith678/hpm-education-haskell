@@ -2,7 +2,7 @@
 
 Haskell is a purely functional computer programming language. To be more precise, it is a polymorphically- statically- and strongly-typed, lazy, compiled, purely functional programming language. We will explore what all of those mean soon enough, but let’s start by reviewing what are functions, what is functional programming and how functional programming differs from imperative programming.
 
-### Functions
+## Functions
 
 In Haskell, functions work exactly as they do in mathematics. In mathematics, functions define the unambiguous dependence of the output value to its arguments, i.e., they map the input values to the output. This means that for any combination of arguments, there can only be one result. Let’s look at a simple example of a function that takes one argument and multiplies it by three:
 
