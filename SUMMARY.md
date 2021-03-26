@@ -1,10 +1,21 @@
 # Table of contents
 
-* [Introduction to Haskell](README.md)
+* [Haskell](README.md)
 
 ## Introduction
 
 * [Introduction](introduction/introduction.md)
 * [Functions](introduction/functions.md)
 * [Functional Programming vs Imperative Programming](introduction/functional-programming-vs-imperative-programming.md)
+* [Pros \(and Cons\) of Haskell](introduction/pros-and-cons-of-haskell.md)
+* [History of Haskell](introduction/history-of-haskell.md)
+* [Installing Haskell](introduction/installing-haskell/README.md)
+  * [Mac](introduction/installing-haskell/mac.md)
+  * [Linux](introduction/installing-haskell/linux.md)
+  * [Windows](introduction/installing-haskell/windows.md)
+* [Haskell Modules](introduction/haskell-modules.md)
+* [Loading Modules into GHCi](introduction/loading-modules-into-ghci.md)
+* [Expressions](introduction/expressions.md)
+* [Laziness](introduction/laziness.md)
+* [Immutability](introduction/immutability.md)
 

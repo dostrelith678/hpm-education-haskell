@@ -32,7 +32,7 @@ To define our tripling function above in Haskell, we would write:
 triple x = 3 * x
 ```
 
-where double is the function name, x is its only argument, and `3 * x` is the function body. Notice that in Haskell, there is no need for parentheses that wrap around the arguments. The function name and the first argument, as well as any subsequent arguments, are simply separated by a space.
+where double is the function name, x is its only argument and `3 * x` is the function body. Notice that in Haskell, there is no need for parentheses that wrap around the arguments. The function name and the first argument, as well as any subsequent arguments, are simply separated by a space.
 
 When the function is applied to actual arguments, the body of the function receives the arguments and the result is calculated \(with comments in curly parentheses\):
 
