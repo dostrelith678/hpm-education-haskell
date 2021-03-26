@@ -20,6 +20,7 @@ GHCi, version 8.10.2: https://www.haskell.org/ghc/ :? for help
 ghci> :load Practice.hs
 [1 of 1] Compiling Practice ( Practice.hs, interpreted )
 Ok, one module loaded.
+
 *Practice> triple 3
 9
 ```

@@ -19,3 +19,7 @@
 * [Laziness](introduction/laziness.md)
 * [Immutability](introduction/immutability.md)
 
+## Types in Haskell
+
+* [Untitled](types-in-haskell/untitled.md)
+
