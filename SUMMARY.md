@@ -23,4 +23,5 @@
 
 * [Introduction](types-in-haskell/untitled.md)
 * [Basic Types](types-in-haskell/basic-types.md)
+* [Static Type Check](types-in-haskell/static-type-check.md)
 
