@@ -24,4 +24,6 @@
 * [Introduction](types-in-haskell/untitled.md)
 * [Basic Types](types-in-haskell/basic-types.md)
 * [Static Type Check](types-in-haskell/static-type-check.md)
+* [Data Structure Types](types-in-haskell/data-structure-types.md)
+* [List Functions](types-in-haskell/list-functions.md)
 
