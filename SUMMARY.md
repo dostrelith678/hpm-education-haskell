@@ -27,4 +27,5 @@
 * [Data Structure Types](types-in-haskell/data-structure-types/README.md)
   * [Lists](types-in-haskell/data-structure-types/lists/README.md)
     * [List Functions](types-in-haskell/data-structure-types/lists/list-functions.md)
+  * [Tuples](types-in-haskell/data-structure-types/tuples.md)
 
