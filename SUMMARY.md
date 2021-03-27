@@ -28,4 +28,12 @@
   * [Lists](types-in-haskell/data-structure-types/lists/README.md)
     * [List Functions](types-in-haskell/data-structure-types/lists/list-functions.md)
   * [Tuples](types-in-haskell/data-structure-types/tuples.md)
+* [Function Types](types-in-haskell/function-types/README.md)
+  * [Curried Functions](types-in-haskell/function-types/curried-functions.md)
+  * [Partial Application](types-in-haskell/function-types/partial-application.md)
+* [Polymorphic and Overloaded Types](types-in-haskell/polymorphic-and-overloaded-types.md)
+
+## Defining Functions / Working with Functions
+
+* [The Layout Rule](defining-functions-working-with-functions/the-layout-rule.md)
 
