@@ -36,4 +36,5 @@
 ## Defining Functions / Working with Functions
 
 * [The Layout Rule](defining-functions-working-with-functions/the-layout-rule.md)
+* [Local Definitions](defining-functions-working-with-functions/local-definitions.md)
 
