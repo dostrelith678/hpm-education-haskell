@@ -21,5 +21,6 @@
 
 ## Types in Haskell
 
-* [Untitled](types-in-haskell/untitled.md)
+* [Introduction](types-in-haskell/untitled.md)
+* [Basic Types](types-in-haskell/basic-types.md)
 
