@@ -49,3 +49,13 @@
 * [Lambda functions](defining-functions-working-with-functions/lambda-functions.md)
 * [Function Operators](defining-functions-working-with-functions/function-operators.md)
 
+## List Comprehensions
+
+* [List Comprehensions](list-comprehensions/list-comprehensions.md)
+
+## Higher-order Functions
+
+* [Introduction](higher-order-functions/introduction.md)
+* [The map Function](higher-order-functions/the-map-function.md)
+* [The filter Function](higher-order-functions/the-filter-function.md)
+
