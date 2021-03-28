@@ -64,4 +64,7 @@
 * [Introduction](recursion/introduction.md)
 * [4 Steps to Defining Recursive Functions](recursion/4-steps-to-defining-recursive-functions.md)
 * [Recursion Practice](recursion/recursion-practice.md)
+* [Folds](recursion/folds/README.md)
+  * [Fold Right \(foldr\)](recursion/folds/fold-right-foldr.md)
+  * [Fold Left \(foldl\)](recursion/folds/fold-left-foldl.md)
 
