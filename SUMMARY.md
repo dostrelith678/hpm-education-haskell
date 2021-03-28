@@ -81,4 +81,11 @@
 * [Basic Classes](type-classes/basic-classes/README.md)
   * [Eq – Equality Types](type-classes/basic-classes/eq-equality-types.md)
   * [Ord – ordered types](type-classes/basic-classes/ord-ordered-types.md)
+  * [Show – Showable Types](type-classes/basic-classes/show-showable-types.md)
+  * [Read – readable types](type-classes/basic-classes/read-readable-types.md)
+  * [Num – Numeric Types](type-classes/basic-classes/num-numeric-types.md)
+  * [Integral – Integral Types](type-classes/basic-classes/integral-integral-types.md)
+  * [Fractional – Fractional Types](type-classes/basic-classes/fractional-fractional-types.md)
+  * [Enum – Enumeration Types](type-classes/basic-classes/enum-enumeration-types.md)
+* [Derived Instances](type-classes/derived-instances.md)
 
