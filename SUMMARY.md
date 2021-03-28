@@ -37,4 +37,15 @@
 
 * [The Layout Rule](defining-functions-working-with-functions/the-layout-rule.md)
 * [Local Definitions](defining-functions-working-with-functions/local-definitions.md)
+* [The Infix Operator](defining-functions-working-with-functions/the-infix-operator.md)
+* [Conditionals](defining-functions-working-with-functions/conditionals/README.md)
+  * [If-then-else Statements](defining-functions-working-with-functions/conditionals/if-then-else-statements.md)
+  * [MultiWayIf](defining-functions-working-with-functions/conditionals/multiwayif.md)
+  * [Guarded Equations](defining-functions-working-with-functions/conditionals/guarded-equations.md)
+  * [Case-of Statements](defining-functions-working-with-functions/conditionals/case-of-statements.md)
+* [Pattern Matching](defining-functions-working-with-functions/pattern-matching/README.md)
+  * [Tuple Patterns](defining-functions-working-with-functions/pattern-matching/tuple-patterns.md)
+  * [List Patterns](defining-functions-working-with-functions/pattern-matching/list-patterns.md)
+* [Lambda functions](defining-functions-working-with-functions/lambda-functions.md)
+* [Function Operators](defining-functions-working-with-functions/function-operators.md)
 
