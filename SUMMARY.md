@@ -72,4 +72,5 @@
 
 * [Declaring Types](cutom-types/declaring-types/README.md)
   * [Type Synonyms](cutom-types/declaring-types/type-synonyms.md)
+  * [Data Declarations](cutom-types/declaring-types/data-declarations.md)
 
