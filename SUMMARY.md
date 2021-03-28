@@ -68,3 +68,8 @@
   * [Fold Right \(foldr\)](recursion/folds/fold-right-foldr.md)
   * [Fold Left \(foldl\)](recursion/folds/fold-left-foldl.md)
 
+## Cutom Types
+
+* [Declaring Types](cutom-types/declaring-types/README.md)
+  * [Type Synonyms](cutom-types/declaring-types/type-synonyms.md)
+
