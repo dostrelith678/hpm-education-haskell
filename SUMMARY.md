@@ -80,4 +80,5 @@
 * [Introduction](type-classes/introduction.md)
 * [Basic Classes](type-classes/basic-classes/README.md)
   * [Eq – Equality Types](type-classes/basic-classes/eq-equality-types.md)
+  * [Ord – ordered types](type-classes/basic-classes/ord-ordered-types.md)
 
