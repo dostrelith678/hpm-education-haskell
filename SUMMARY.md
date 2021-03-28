@@ -59,3 +59,9 @@
 * [The map Function](higher-order-functions/the-map-function.md)
 * [The filter Function](higher-order-functions/the-filter-function.md)
 
+## Recursion
+
+* [Introduction](recursion/introduction.md)
+* [4 Steps to Defining Recursive Functions](recursion/4-steps-to-defining-recursive-functions.md)
+* [Recursion Practice](recursion/recursion-practice.md)
+
