@@ -88,4 +88,12 @@
   * [Fractional – Fractional Types](type-classes/basic-classes/fractional-fractional-types.md)
   * [Enum – Enumeration Types](type-classes/basic-classes/enum-enumeration-types.md)
 * [Derived Instances](type-classes/derived-instances.md)
+* [Exercise – Making a Card Deck Type](type-classes/exercise-making-a-card-deck-type.md)
+
+## Interactive Programming
+
+* [Introduction](interactive-programming/introduction.md)
+* [Input / Output Actions](interactive-programming/input-output-actions.md)
+* [Sequencing Actions](interactive-programming/sequencing-actions.md)
+* [Exercise - Numbers Guessing Game](interactive-programming/exercise-numbers-guessing-game.md)
 
