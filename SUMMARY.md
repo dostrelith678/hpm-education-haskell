@@ -73,4 +73,11 @@
 * [Declaring Types](cutom-types/declaring-types/README.md)
   * [Type Synonyms](cutom-types/declaring-types/type-synonyms.md)
   * [Data Declarations](cutom-types/declaring-types/data-declarations.md)
+  * [Newtype declarations](cutom-types/declaring-types/newtype-declarations.md)
+
+## Type Classes
+
+* [Introduction](type-classes/introduction.md)
+* [Basic Classes](type-classes/basic-classes/README.md)
+  * [Eq – Equality Types](type-classes/basic-classes/eq-equality-types.md)
 
