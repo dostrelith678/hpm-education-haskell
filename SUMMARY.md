@@ -1,6 +1,6 @@
 # Table of contents
 
-* [Haskell](README.md)
+* [Introduction to Haskell](README.md)
 
 ## Introduction
 
