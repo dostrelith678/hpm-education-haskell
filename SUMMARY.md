@@ -97,3 +97,7 @@
 * [Sequencing Actions](interactive-programming/sequencing-actions.md)
 * [Exercise - Numbers Guessing Game](interactive-programming/exercise-numbers-guessing-game.md)
 
+---
+
+* [References](references.md)
+
