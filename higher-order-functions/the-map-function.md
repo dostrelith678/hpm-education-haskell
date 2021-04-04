@@ -16,7 +16,7 @@ ghci> map squareGt100 [7..12]
 
 Here are some other examples of using `map` with other pre-defined functions:
 
-```text
+```haskell
 ghci> map (* 2) [1..5] -- multiply each number in the list by 2
 [2, 4, 6, 8, 10]
 
@@ -29,4 +29,6 @@ ghci> map reverse ["Cardano", "ADA"] -- reverse a given list
 ghci> map ("Hi, " ++) ["Joe", "Jan"]
 ["Hi, Joe","Hi, Jan"]
 ```
+
+
 

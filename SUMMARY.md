@@ -97,7 +97,12 @@
 * [Sequencing Actions](interactive-programming/sequencing-actions.md)
 * [Exercise - Numbers Guessing Game](interactive-programming/exercise-numbers-guessing-game.md)
 
+## Functors, Applicatives and Monads
+
+* [Introduction](functors-applicatives-and-monads/introduction.md)
+* [Functors](functors-applicatives-and-monads/functors.md)
+
 ---
 
-* [References](references.md)
+* [References / Further Reading](references.md)
 
