@@ -73,6 +73,25 @@ ghci> fmap (/2) myTree
 Branch (Branch (Leaf 0.5) (Leaf 1.0)) (Branch (Leaf 5.0) (Leaf 10.0))
 ```
 
+Note that the `Prelude` comes with an infix operator for `fmap` as well - `(<$>)`:
+
+```haskell
+ ($)  ::              (a -> b) ->   a ->   b
+(<$>) :: Functor f => (a -> b) -> f a -> f b
+(<$>) = fmap
+```
+
+`($)` is the simple function application operator we learned about before, while `(<$>)` is also a function application operator but with lifting over a Functor. We could also write the above code as:
+
+
+
+```haskell
+ghci> myTree = (Branch (Branch (Leaf 1) (Leaf 2)) (Branch (Leaf 10) (Leaf 20)))
+ghci> (/2) <$> myTree
+
+Branch (Branch (Leaf 0.5) (Leaf 1.0)) (Branch (Leaf 5.0) (Leaf 10.0))
+```
+
 ## Functor Laws
 
 There are two functor laws that must be satisfied and ensure that `fmap` works as intended:

@@ -101,6 +101,7 @@
 
 * [Introduction](functors-applicatives-and-monads/introduction.md)
 * [Functors](functors-applicatives-and-monads/functors.md)
+* [Applicative Functors](functors-applicatives-and-monads/applicative-functors.md)
 
 ---
 
