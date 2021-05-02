@@ -21,7 +21,7 @@ putChar :: Char -> IO () -- prints a character to the screen
 return :: a -> IO a -- returns a value as an action
 ```
 
-Note that, strictly speaking, `putChar` and `return` are not actions, but functions that return actions. The `return` function is simply our bridge from the pure world to the impure world that we use when we want to use our pure values in actions, which we will see in examples soon. For now, let's just try out the `getChar` and `putChar` in GHCi:
+Note that, strictly speaking, `putChar` and `return` are not actions, but functions that return actions. The `return` function is simply our one-way bridge from the pure world to the impure world that we use when we want to use our pure values in actions, which we will see in examples soon. For now, let's just try out the basic actions `getChar` and `putChar` in GHCi:
 
 ```haskell
 ghci> getChar
@@ -29,6 +29,7 @@ ghci> getChar
 
 ghci> getChar
 '\n'
+
 
 ghci> putChar 'a'
 a
