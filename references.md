@@ -7,6 +7,7 @@
 * Yet Another Haskell Tutorial - [https://en.wikibooks.org/wiki/Yet\_Another\_Haskell\_Tutorial](https://en.wikibooks.org/wiki/Yet_Another_Haskell_Tutorial)
 * HaskellWiki - [https://wiki.haskell.org/Haskell](https://wiki.haskell.org/Haskell)
 * Haskell WikiBook - [https://en.wikibooks.org/wiki/Haskell](https://en.wikibooks.org/wiki/Haskell)
+* What I Wish I Knew When Learning Haskell - [http://dev.stephendiehl.com/hask/](http://dev.stephendiehl.com/hask/#why-are-monads-confusing)
 
 
 
