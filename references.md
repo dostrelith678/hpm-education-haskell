@@ -8,6 +8,7 @@
 * HaskellWiki - [https://wiki.haskell.org/Haskell](https://wiki.haskell.org/Haskell)
 * Haskell WikiBook - [https://en.wikibooks.org/wiki/Haskell](https://en.wikibooks.org/wiki/Haskell)
 * What I Wish I Knew When Learning Haskell - [http://dev.stephendiehl.com/hask/](http://dev.stephendiehl.com/hask/#why-are-monads-confusing)
+* Wikipedia pages - [https://en.wikipedia.org/wiki/Monad\_\(functional\_programming\)](https://en.wikipedia.org/wiki/Monad_%28functional_programming%29)
 
 
 

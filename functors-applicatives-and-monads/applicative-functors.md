@@ -41,7 +41,7 @@ ghci> pure (+) <*> Just 5 <*> Just 3
 Just 8
 ```
 
-We first use `pure` on the addition function`(+)` in order to wrap it into a `Maybe` and then apply it to the two arguments. Let's take a closer look at how the application is executed and keep track of types:
+We first use `pure` on the addition function `(+)` in order to wrap it into a `Maybe` and then apply it to the two arguments. Let's take a closer look at how the application is executed and keep track of types:
 
 ```haskell
 -- pure transforms the (+) into an instance of an Applicative
@@ -167,7 +167,7 @@ The `Identity` law states that applying the `id` function to an argument in appl
 
 The `Homomorphism` law states that `pure` preserves function application in the sense that applying a pure function to a pure value is the same as calling `pure` on the result of normal _function application_ to that value \(`f x`\).
 
-The `Interchange` law states that the order in which we evaluate components doesn't matter in the case when we apply a effectful function to a pure argument. The `($ y)` is used to supply the argument `y` to the function `u`. A simpler example of using `($ y)`:
+The `Interchange` law states that the order in which we evaluate components doesn't matter in the case when we apply an effectful function to a pure argument. The `($ y)` is used to supply the argument `y` to the function `u`. A simpler example of using `($ y)`:
 
 ```haskell
 ghci> map ($ 2) [(2*), (4*), (8*)]

@@ -1,0 +1,76 @@
+# Monads
+
+{% hint style="info" %}
+This section is still a work in progress.
+{% endhint %}
+
+#### About Monads
+
+Let's start by saying that monads are difficult to grasp at first. It might take you some time and a couple of revisions to really understand them, so don't worry if they seem overwhelming at the start. Like functors and applicatives, monads provide an abstraction for chaining operations that allows us to structure our programs generically and avoid code duplication. This abstraction allows us to simplify problems like handling exceptions during execution \(which we will explore shortly\) by building succinct pipelines without needing to worry about control flow or side-effects.
+
+For our next example, let's imagine that we have a database that holds information about accounts and transactions - we don't have to worry about accessing the database right now, we just assume that a given account or transaction either exists in our database or doesn't. We could have the following type defined \(using type synonym declarations\):
+
+```haskell
+type Transaction = [Char] -- or String
+type Account = [Char] -- or String
+```
+
+where both the `Transaction` and the `Account` instances are represented by strings \(e.g. through a hashing function\). Imagine that we now want to create a function that, given a `Transaction`, looks up both the `Account` from which the transaction originated and the destination `Account` in our database. There are three ways in which this function could fail:
+
+1. The transaction is not found in our database
+2. The origin account is not found in our database
+3. The destination account is not found in our database
+
+From what we already learned, we would write this function something like this:
+
+```haskell
+-- helper functions for finding transactions / accounts that may fail
+findTransaction :: Transaction -> Maybe Transaction
+findOriginAccount :: Transaction -> Maybe Account
+findDestinationAccount :: Transaction -> Maybe Account
+
+findAccounts :: Transaction -> Maybe (Account, Account)
+findAccounts t =
+    case findTransaction t of
+        Nothing -> Nothing
+        Just t ->
+            case findOriginAccount t of
+                Nothing -> Nothing
+                Just originA ->
+                    case findDestinationAccount t of
+                        Nothing -> Nothing
+                        Just destinationA ->
+                            Just (originA, destinationA)
+```
+
+{% hint style="info" %}
+Is it possible to write this function using `Applicative` form?
+{% endhint %}
+
+The important thing to notice here is the common pattern of exception checking at every step. At any point that we fail to find an element we are looking for, we want the function to handle this exception by returning `Nothing` , and we implement this very explicitly result in a long and hard-to-read function code. In other words, every step of the function depends on the result of the previous one \(or "binds" to the result of the previous one\). This is where we can take advantage of the fact that `Maybe` is a monad to simplify this by abstracting the error handling away.
+
+First, let's look at the declaration of the `Monad`class in Haskell:
+
+```haskell
+class Applicative m => Monad m where
+    return :: a -> m a
+    (>>=)  :: m a -> (a -> m b) -> m b
+    
+    return = pure 
+```
+
+A `Monad` is therefore an `Applicative` that also supports the two methods,  `return` and `(>>=)` \(referred to as `bind`\). The `return` method wraps a value of any basic type `a` into the monad, returning a **monadic value**. The built-in declaration also has a default declaration for the `return` function, it is simply the `pure` method of the underlying `Applicative` that is used to wrap a value in the applicative constructor. The `(>>=)` takes a monadic value and a function that returns a monadic value and in general, applies that function to the first argument. Let's explore this in more detail with the implementation of the monad class for the `Maybe` type as an example :
+
+```haskell
+instance Monad Maybe where
+    -- (>>=) :: Maybe a -> (a -> Maybe b) -> Maybe b
+    Nothing >>= _ = Nothing
+    (Just x) >>= f = f x
+```
+
+{% hint style="info" %}
+Why don't we wrap the result of the function application `f x` into the `Maybe` type constructor `Just`?
+{% endhint %}
+
+For the `return` method, we keep the default declaration of `pure` which simply resolves to the `Just` constructor for the `Maybe` type. The `(>>=)` method exemplifies the main idea of monads, which is that we first look at the impure argument we receive \(in this case `Maybe a` \) and decide what to do from there. In that way, the function application depends on the result of the first argument \(or the underlying value of the first argument\). If `Maybe a` is a `Nothing` then we can completely ignore the function and simply propagate the exception with `Nothing`. Only if we know that the first argument is really a `Just a` do we unwrap the `a` value and apply the function `f` to it.
+
