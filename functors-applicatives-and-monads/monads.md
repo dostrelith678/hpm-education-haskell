@@ -86,7 +86,7 @@ findAccounts t =
 
 That reads much better - we don't have to take care of every `Nothing` possibility as the monadic aspect of `Maybe` takes care of this for us. One thing to note that the `tx` argument is available at any step below the first "bind" all the lambda functions bind to one another in a sequence. The same applies to `origin` argument which we only use in the last step in order to `return` our result.
 
-Does this kind of sequencing remind you of something we saw before? We used the `do` notation with I/O actions to perform multiple actions in a sequence. As it turns out, the `do` notation is not specific to I/O actions but is actually just an alternative monad syntax and can be used with any monad. We can therefore re-write `findAccounts` using `do` notation:
+Does this kind of sequencing remind you of something we saw before? We used the `do` notation with [I/O actions](../interactive-programming/sequencing-actions.md) to perform multiple actions in a sequence. As it turns out, the `do` notation is not specific to I/O actions but is actually just an alternative monad syntax and can be used with any monad. We can therefore re-write `findAccounts` using `do` notation:
 
 ```haskell
 findAccounts t = 
