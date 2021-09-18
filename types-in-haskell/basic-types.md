@@ -14,7 +14,7 @@
 
 ## Float – single-precision floating-point numbers 
 
-**Float** can contain decimal numbers \(e.g. `-1.5`, `6.23`, `50.0`\) up to a certain precision which is limited by a fixed amount of memory. The term floating-point comes from this memory limitation, which limits the number of digits \(precision\) that can come after the decimal point based on the size of the number. 9
+**Float** can contain decimal numbers \(e.g. `-1.5`, `6.23`, `50.0`\) up to a certain precision which is limited by a fixed amount of memory. The term floating-point comes from this memory limitation, which limits the number of digits \(precision\) that can come after the decimal point based on the size of the number.
 
 ## Double – double-precision floating-point numbers
 
