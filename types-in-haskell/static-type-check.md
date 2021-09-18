@@ -33,7 +33,9 @@ But what happens if we try to apply our `triple` function to a floating-point nu
  In an equation for ‘it’: it = triple 3.5
 ```
 
-We get a type error because we strictly defined the function as one that takes in an Int as its only argument, but we passed in a floating-point number. So how can we make our function accept both `Int`and `Float`? To do that, we can use Haskell's polymorphism and specify a polymorphic type of `Num` \(an **overloaded type** specified with a **type class** - more on those later on\), which supports both integer and floating-point numbers:
+#### Polymorphism
+
+We get a type error because we strictly defined the function as one that takes in an `Int` as its only argument, but we passed in a floating-point number. So how can we make our function accept both `Int`and `Float`? To do that, we can use Haskell's polymorphism and specify a polymorphic type of `Num a` \(an **overloaded type** specified with a **type class** - more on those on the next page\), which supports both integer and floating-point numbers:
 
 ```haskell
 triple :: Num a => a -> a

@@ -10,7 +10,7 @@ triple x = 3 * x
 In this case, the type of our function triple is `Int -> Int` – it takes an`Int`as its only argument and returns an`Int`as the result. As functions are expressions, we can use them as any other type of data, for example, we can create a list of functions:
 
 ```haskell
-funList = [(+), (*)] -- (+) and (*) are functions for addition and multiplication
+ghci> funList = [(+), (*)] -- (+) and (*) are functions for addition and multiplication
 ghci> :t funList
 Num a => [a -> a -> a]
 ```

@@ -21,6 +21,7 @@
 * [Introduction](types-in-haskell/untitled.md)
 * [Basic Types](types-in-haskell/basic-types.md)
 * [Static Type Check](types-in-haskell/static-type-check.md)
+* [Polymorphic and Overloaded Types](types-in-haskell/polymorphic-and-overloaded-types.md)
 * [Data Structure Types](types-in-haskell/data-structure-types/README.md)
   * [Lists](types-in-haskell/data-structure-types/lists/README.md)
     * [List Functions](types-in-haskell/data-structure-types/lists/list-functions.md)
@@ -28,7 +29,6 @@
 * [Function Types](types-in-haskell/function-types/README.md)
   * [Curried Functions](types-in-haskell/function-types/curried-functions.md)
   * [Partial Application](types-in-haskell/function-types/partial-application.md)
-* [Polymorphic and Overloaded Types](types-in-haskell/polymorphic-and-overloaded-types.md)
 
 ## Defining Functions / Working with Functions
 
