@@ -65,7 +65,7 @@ trackScore time avgTime =
           average."
       
 ghci> trackScore 10 10
-19"Your time is on par with the average time!"
+"Your time is on par with the average time!"
 ```
 
 The output is fine now, but with every **nested if-statement**, the code gets harder to read. Turns out there is a way to make it look nicer – **MultiWayIfs**.

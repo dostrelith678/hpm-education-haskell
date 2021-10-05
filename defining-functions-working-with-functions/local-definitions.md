@@ -43,5 +43,5 @@ sumSquaresM5 x y =
     res = mod sum 2 -- the sum expression is not accessible here
 ```
 
-The compilation of the above would result in an error as`sum`is only accessible in the`in`clause of the code. This means that with`let-in`we can create super-localised expressions that aren't accessible anywhere outside the clause.
+The compilation of the above would result in an error as `sum` is only accessible in the `in` clause of the code. This means that with `let-in` we can create **super-localised expressions** that aren't accessible anywhere outside the `in` code block.
 

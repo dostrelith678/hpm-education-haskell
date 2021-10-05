@@ -7,7 +7,7 @@ if | <CONDITION1> -> <EXPRESSION1>
    | <CONDITION2> -> <EXPRESSION2>
    | ...
    | <CONDITIONx> -> <EXPRESSIONx>
-   | otherwise -> <EXPRESSION>
+   | otherwise    -> <EXPRESSION>
 ```
 
 The symbol `|` can be read as "such that..." or "where...". The guards are evaluated from top to bottom, and the expression associated with the first guard that is `True` is chosen for further evaluation. The `otherwise` function simply always evaluates to `True` and the expression associated with it will always be further evaluated if none of the guards before it evaluate to `True`. It gives us a convenient way to make sure that we have handled all possible cases. It is not necessary to add the `otherwise` guard at the end, but if all the possible cases are not met, we will end up with an error on runtime.
@@ -35,7 +35,7 @@ ghci> :r
 
 *Practice> trackScore 10 10
 "*** Exception: practice.hs:(74,1)-(76,89): Non-exhaustive patterns in 
-function trackScore2
+function trackScore"
 ```
 
 Let's fix it up:

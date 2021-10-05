@@ -8,10 +8,10 @@ case <EXPRESSION> of
   <PATTERN2> -> <EXPRESSION2>
   ...
   <PATTERNx> -> <EXPRESSIONx>
-  _ -> <DEFAULT_EXPRESSION>
+  _          -> <DEFAULT_EXPRESSION>
 ```
 
-The `_` is a **wildcard character**. It is a useful tool for when we do not really care about whatever the value of the expression might be. In this case, whatever it is – we know what we want to do if none of our previous cases match and assign it the default expression. For example, we could define a function that returns the colour of a playing card based on its suit:
+The `_` is a **wildcard character**. It is a useful tool for when we do not really care about whatever the value of the expression might be. In this case, whatever that value is – we know what we want to do if none of our previous cases match and assign it the default expression. For example, we could define a function that returns the colour of a playing card based on its suit:
 
 ```haskell
 cardColour :: String -> String

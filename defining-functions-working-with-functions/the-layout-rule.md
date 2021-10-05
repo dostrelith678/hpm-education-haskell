@@ -1,6 +1,6 @@
 # The Layout Rule
 
-Before we dive into working with functions in Haskell, let's explore the **layout rule**. The layout rule states that each definition at the same level must begin at the same position in the script. This allows us to determine the groupings of different definitions simply from **indentation**. Let's define a function that adds together the squares of two numbers:
+Before we dive into working with functions in Haskell, let's explore the **layout rule**. The layout rule states that each definition at the same level must begin at the same line position in the script. This allows us to determine the groupings of different definitions simply from **indentation**. Let's define a function that adds together the squares of two numbers:
 
 ```haskell
 sumSquares x y = a + b
