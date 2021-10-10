@@ -15,7 +15,7 @@ squareGt100 x = gt100 (square x)
 
 Because we are applying both `gt100` and `square` functions to the same argument, we can compose them into one and avoid parentheses altogether by applying that composed function to the argument. This is achieved through two function operators, function composition and function application operators:
 
-1\) The function composition operator is \(.\), and it is simply another function that returns a composed function as its result. This is how it is defined in the Prelude:
+1\) The function composition operator is (.), and it is simply another function that returns a composed function as its result. This is how it is defined in the Prelude:
 
 ```haskell
 (.) f g = \x -> f (g x)
@@ -36,7 +36,7 @@ squareGt100 :: Int -> Bool
 squareGt100 x = gt100 . square $ x
 ```
 
-That is, we first compose the two functions, even and square and then apply the composed function to the argument `x`. Note that we could also use just the function composition operator, but in that case, we would still have to use parentheses:
+That is, we first compose the two functions, `gt100` and `square` and then apply the composed function to the argument `x`. Note that we could also use just the function composition operator, but in that case, we would still have to use parentheses:
 
 ```haskell
 squareGt100 :: Int -> Bool
@@ -47,4 +47,3 @@ False
 ghci> squareGt100 11
 True
 ```
-
