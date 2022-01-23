@@ -6,7 +6,7 @@ A special case of a new type declaration `newtype` can be used **if the type has
 newtype IPAddress = IP String
 ```
 
-The `newtype` is different from type because it defines a completely new type rather than just a synonym for an existing type such as:
+The `newtype` is different from `type` because it defines a completely new type rather than just a synonym for an existing type such as:
 
 ```haskell
 type IPAddress = String
@@ -21,4 +21,3 @@ data IPAddress = IP String
 ```
 
 states that `IPAddress` is a completely new data type.
-
