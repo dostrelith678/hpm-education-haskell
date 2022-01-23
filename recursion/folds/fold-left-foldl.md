@@ -1,6 +1,6 @@
-# Fold Left \(foldl\)
+# Fold Left (foldl)
 
-In `foldl`, the combining function \(or operator\) associates to the left, meaning the left-most elements will be evaluated first, i.e. the most nested parentheses will be on the left side of the data structure. Therefore, its definition using recursion on lists would be:
+In `foldl`, the combining function (or operator) associates to the left, meaning the left-most elements will be evaluated first, i.e. the most nested parentheses will be on the left side of the data structure. Therefore, its definition using recursion on lists would be:
 
 ```haskell
 foldl :: (a -> b -> a) -> a -> [b] -> a
@@ -22,8 +22,8 @@ Notice that the places of the accumulator value `v` are switched in `foldl` rela
 
 ```haskell
 lengthr :: [a] -> Int
-lengthr = foldr (\_ n -> n + 1) 0 -- list element first, accumulator second
-
+-- list element first, accumulator second
+lengthr = foldr (\_ n -> n + 1) 0
 ghci> lengthr [1, 2, 3]
 3
 ```
@@ -32,11 +32,9 @@ If we want to declare the same function with `foldl`, we have to reverse the arg
 
 ```haskell
 lengthl :: [a] -> Int
-lengthl = foldl (\n _ -> n + 1) 0 -- accumulator first, list element second
-
+ -- accumulator first, list element second
+lengthl = foldl (\n _ -> n + 1) 0
 Prelude> lengthl [1, 2, 3]
 3
 ```
-
-
 
