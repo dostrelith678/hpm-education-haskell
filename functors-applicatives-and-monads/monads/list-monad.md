@@ -12,7 +12,7 @@ instance Monad [] where
 ```
 
 {% hint style="info" %}
-The bind operator in this case is defined using [list comprehension](../../list-comprehensions/list-comprehensions.md). ****Can you define it using the functions [`map`](../../higher-order-functions/the-map-function.md) and [`concat`](http://zvon.org/other/haskell/Outputprelude/concat_f.html)?
+The bind operator in this case is defined using [list comprehension](../../list-comprehensions/list-comprehensions.md). **** Can you define it using the functions [`map`](../../higher-order-functions/the-map-function.md) and [`concat`](http://zvon.org/other/haskell/Outputprelude/concat\_f.html)?
 {% endhint %}
 
 The `return` method simply takes a value `x` and puts it into a `List` structure `[x]`. The `(>>=)` method for lists extracts all the values `x` from the list `m` and applies the function `f` to each of them, combining all the results in one final list. As with the [`Maybe` monad](maybe-monad.md), the bind operator,  allows us to chain operations together with lists as well. With lists, these chaining operations will combine all output possibilities in a single result list.
@@ -29,7 +29,7 @@ ghci> ["Cell"] >>= mitosis
 
 With the monadic instance of lists, we have a simple way of chaining multiple operations on lists. We can chain the result of multiple cell replications starting with one cell into one final list:
 
-```text
+```
 ghci> ["Cell"] >>= mitosis >>= mitosis >>= mitosis
 ["Cell", "Cell", "Cell", "Cell", "Cell", "Cell", "Cell", "Cell"]
 ```
@@ -49,4 +49,3 @@ threeGens gen0 = do
 ghci> threeGens "Cell"
 ["Cell", "Cell", "Cell", "Cell", "Cell", "Cell", "Cell", "Cell"]
 ```
-

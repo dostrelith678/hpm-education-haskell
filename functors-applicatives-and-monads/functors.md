@@ -1,6 +1,6 @@
 # Functors
 
-**Functors** _****_generalise the idea of function mapping on a data structure type, i.e. applying a function to each element in the data structure. We have looked at the `map` function that does exactly that but is limited to a specific data structure - `list`. However, any **parameterised** _****_**type** _****_\(data structure\) can be made into an instance of the `functor` class so that it supports function mapping to its elements through the use of the `fmap` function:
+**Functors **_****_ generalise the idea of function mapping on a data structure type, i.e. applying a function to each element in the data structure. We have looked at the `map` function that does exactly that but is limited to a specific data structure - `list`. However, any **parameterised **_****_** type **_****_ (data structure) can be made into an instance of the `functor` class so that it supports function mapping to its elements through the use of the `fmap` function:
 
 ```haskell
 class Functor f where
@@ -23,7 +23,7 @@ map :: (a -> b) -> [a] -> [b]
 
 We can see that `fmap` has the exact same type signature as `map` - but`map` is limited to the type of `lists`, whereas `fmap` can be used with any parameterised type that uses a type constructor`f`. Note that form of`[a]` and `[b]` is just syntax sugar for the list type and is equivalent to `[] a` and `[] b` , where `[]` is the _type constructor_ for lists.
 
-Since the `map` and `fmap` function perform the same action, it is very simple to make the `list` type into a functor \(and it is made into one by default\):
+Since the `map` and `fmap` function perform the same action, it is very simple to make the `list` type into a functor (and it is made into one by default):
 
 ```haskell
 instance Functor [] where
@@ -31,7 +31,7 @@ instance Functor [] where
     fmap = map
 ```
 
-However, when it comes to other data structure types, we have to define the `fmap`  function ourselves. For example, the Maybe type \(also an instance of the Functor class by default\) and can be made an instance as:
+However, when it comes to other data structure types, we have to define the `fmap`  function ourselves. For example, the Maybe type (also an instance of the Functor class by default) and can be made an instance as:
 
 ```haskell
 instance Functor Maybe where
@@ -40,9 +40,9 @@ instance Functor Maybe where
     fmap f (Just x) = Just (f x)
 ```
 
-In the case of a `Nothing`, we ignore the function and just return `Nothing` as `Nothing` in general represents an error state that we then want to propagate through our `fmap` function as well. Otherwise, we apply the function `f` to the underlying value `x` of `Just x` and return the Maybe type \(using the `Just` constructor\) of the result.
+In the case of a `Nothing`, we ignore the function and just return `Nothing` as `Nothing` in general represents an error state that we then want to propagate through our `fmap` function as well. Otherwise, we apply the function `f` to the underlying value `x` of `Just x` and return the Maybe type (using the `Just` constructor) of the result.
 
-Now let's see how we can make a newly-defined data type into an instance of the Functor class. We will first define a data type `Tree` that will represent a **full binary tree** \([https://en.wikipedia.org/wiki/Binary\_tree](https://en.wikipedia.org/wiki/Binary_tree)\). A full binary tree is a binary tree type in which every tree node has either `0` or `2` children. In the case of a node with `0` children, it will be a `Leaf` that stores some value, and in the case of a node with `2`  children, it will be a `Branch` that branches into two new nodes:
+Now let's see how we can make a newly-defined data type into an instance of the Functor class. We will first define a data type `Tree` that will represent a **full binary tree** ([https://en.wikipedia.org/wiki/Binary\_tree](https://en.wikipedia.org/wiki/Binary\_tree)). A full binary tree is a binary tree type in which every tree node has either `0` or `2` children. In the case of a node with `0` children, it will be a `Leaf` that stores some value, and in the case of a node with `2`  children, it will be a `Branch` that branches into two new nodes:
 
 ```haskell
 data Tree a = Leaf a | Branch (Tree a) (Tree a)
@@ -62,7 +62,7 @@ The first case of `Leaf` is analogous to how we defined the `Just` case of the `
 
 To represent the following binary tree:
 
-![](../.gitbook/assets/binary_tree.png)
+![](../.gitbook/assets/binary\_tree.png)
 
 We can use the following code and `fmap` over the entire data structure, applying the passed function to each leaf:
 
@@ -107,4 +107,3 @@ fmap (g . f) = fmap g . fmap f
 ```
 
 The second functor law ensures that _function_ _composition_ is preserved when using `fmap` so that it does not matter whether we map a composed function `(g . f)` or map the first function `g` and then the second function `f`, as long as the order of the `g` and `f` functions stays the same.
-

@@ -11,9 +11,9 @@ ghci> maybeAdd (Just 5) (Just 3)
 Just 8
 ```
 
-But that way we would have to write a new custom-made function for every function we would like to apply to two \(or more\) `Maybe` types - for example, multiplication.
+But that way we would have to write a new custom-made function for every function we would like to apply to two (or more) `Maybe` types - for example, multiplication.
 
-This is where **Applicative Functors** _****_\(or **Applicatives**\) come into play. Applicatives generalise applying pure functions to **effectful** arguments \(such as the `Maybe` type\) instead of plain values. The effect of the `Maybe` type is the possibility of failure, and we will explore the effects of some other data types later.  The definition of `Applicative` is:
+This is where **Applicative Functors **_****_ (or **Applicatives**) come into play. Applicatives generalise applying pure functions to **effectful** arguments (such as the `Maybe` type) instead of plain values. The effect of the `Maybe` type is the possibility of failure, and we will explore the effects of some other data types later.  The definition of `Applicative` is:
 
 ```haskell
 class (Functor f) => Applicative f where
@@ -71,7 +71,7 @@ Nothing
 
 ### The List Applicative
 
-The `List` applicative is implemented in a way that function application through `(<*>)` applies the function in every possible combination of the arguments \(as a Cartesian product in mathematics\). So the underlying **effect** of the `List`  type is the possibility of results. The `Applicative` instance declaration for `List` is:
+The `List` applicative is implemented in a way that function application through `(<*>)` applies the function in every possible combination of the arguments (as a Cartesian product in mathematics). So the underlying **effect** of the `List`  type is the possibility of results. The `Applicative` instance declaration for `List` is:
 
 ```haskell
 instance Applicative [] where
@@ -96,12 +96,12 @@ ghci> [(+10), (*10), (^2)] <*> [1,2,3]
 In the second example, each of the functions in the first list is a curried function that takes in one additional argument, and the result of the applicative action is applying all the functions from the first list to all the arguments of the second list.
 
 {% hint style="info" %}
-For those curious, there is also an implementation that matches only one argument per function - ZipList \([http://hackage.haskell.org/package/base-4.11.1.0/docs/Control-Applicative.html\#t:ZipList](http://hackage.haskell.org/package/base-4.11.1.0/docs/Control-Applicative.html#t:ZipList)\)
+For those curious, there is also an implementation that matches only one argument per function - ZipList ([http://hackage.haskell.org/package/base-4.11.1.0/docs/Control-Applicative.html#t:ZipList](http://hackage.haskell.org/package/base-4.11.1.0/docs/Control-Applicative.html#t:ZipList))
 {% endhint %}
 
 ### The IO Applicative
 
-The `IO` type refers to the impure world of Haskell, and its underlying **effect** _****_is the ability to perform input/output actions. Therefore, the applicative instance of the `IO` type supports the application of pure functions to impure arguments, and can also handle sequencing and extraction of result values:
+The `IO` type refers to the impure world of Haskell, and its underlying **effect **_****_ is the ability to perform input/output actions. Therefore, the applicative instance of the `IO` type supports the application of pure functions to impure arguments, and can also handle sequencing and extraction of result values:
 
 ```haskell
 instance Applicative IO where
@@ -112,7 +112,7 @@ instance Applicative IO where
         return (f x)
 ```
 
-`pure` is simply our `return` function that wraps a pure value into an `IO` type, and given two impure arguments \(`IO` actions\), `(<*>)` performs the action `a` to get the function `f` and the action `b` to get the argument `x` , and finally returns `f x` - the result of that function application to the argument wrapped in the `IO` type.
+`pure` is simply our `return` function that wraps a pure value into an `IO` type, and given two impure arguments (`IO` actions), `(<*>)` performs the action `a` to get the function `f` and the action `b` to get the argument `x` , and finally returns `f x` - the result of that function application to the argument wrapped in the `IO` type.
 
 As was mentioned before, the use of applicative style can handle both **sequencing** and **extraction** of values, so to define a function that reads two characters and returns their concatenation, instead of:
 
@@ -165,7 +165,7 @@ pure (.) <*> u <*> v <*> w = u <*> (v <*> w) -- Composition
 
 The `Identity` law states that applying the `id` function to an argument in applicative style returns the unaltered argument, much like we saw in functors.
 
-The `Homomorphism` law states that `pure` preserves function application in the sense that applying a pure function to a pure value is the same as calling `pure` on the result of normal _function application_ to that value \(`f x`\).
+The `Homomorphism` law states that `pure` preserves function application in the sense that applying a pure function to a pure value is the same as calling `pure` on the result of normal _function application_ to that value (`f x`).
 
 The `Interchange` law states that the order in which we evaluate components doesn't matter in the case when we apply an effectful function to a pure argument. The `($ y)` is used to supply the argument `y` to the function `u`. A simpler example of using `($ y)`:
 
@@ -174,5 +174,4 @@ ghci> map ($ 2) [(2*), (4*), (8*)]
 [4,8,16]
 ```
 
-The `Composition` law states that _function composition_ `(.)` __works with the `pure` function as well, so that `pure (.)` composes functions, i.e. composing functions `u` and `v` with `pure (.)` and applying the composed function to `w` gives the same result as to simply applying both functions `u` and `v` to the argument `w`.
-
+The `Composition` law states that _function composition_ `(.)` __ works with the `pure` function as well, so that `pure (.)` composes functions, i.e. composing functions `u` and `v` with `pure (.)` and applying the composed function to `w` gives the same result as to simply applying both functions `u` and `v` to the argument `w`.
