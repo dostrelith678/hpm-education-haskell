@@ -1,6 +1,6 @@
 # List Functions
 
-Haskell comes with a number of useful functions for working with Lists in its`Data.List`module. This module is loaded by default in GHCi's Prelude:
+Haskell comes with a number of useful functions for working with Lists in its `Data.List` module. This module is loaded by default in GHCi's Prelude:
 
 ```haskell
 ghci> head [1, 2, 3] -- get the first element of a list
@@ -34,10 +34,11 @@ ghci> drop 2 [1 .. 5] -- drop the first 2 elements of a list
 [3, 4, 5]
 ```
 
-As we mentioned before, everything in Haskell is immutable which means we cannot change an existing list, but we can create new ones from it. Lists are constructed from an empty list`[]`using an operator called cons`(:)`that constructs a list by adding new elements to the start of the list. For example, the list `[1, 2, 3, 4, 5]` is constructed in the following way:
+As we mentioned before, everything in Haskell is immutable which means we cannot change an existing list, but we can create new ones from it. Lists are constructed from an empty list `[]` using an operator called cons `(:)` that constructs a list by adding new elements to the start of the list. For example, the list `[1, 2, 3, 4, 5]` is constructed in the following way:
 
 ```haskell
 [1, 2, 3, 4, 5] => 1 : (2 : (3 : (4 : (5 : []))))
+
 5 : []
 4 : [5]
 3 : [4, 5]
@@ -45,4 +46,3 @@ As we mentioned before, everything in Haskell is immutable which means we cannot
 1 : [2, 3, 4, 5]
 [1, 2, 3, 4, 5]
 ```
-

@@ -1,7 +1,5 @@
 # Lists
 
-## Lists
-
 **Lists** are sequences of elements of the **same type** and are a key component of Haskell. This means that a list can only hold elements of the same type, e.g. a list of `Ints` as we used in our example function - `sum`. To create lists in Haskell, we put their elements in square brackets and separate them with commas:
 
 ```haskell
@@ -28,5 +26,4 @@ ghci> x = [[1, 2, 3], ['a', 'b', 'c']]
       In the expression: [[1, 2, 3], ['a', 'b', 'c']]
 ```
 
-Lists can also be empty \(`[]`\) and a special case called a **singleton** list is \(`[[]]`\), which is a list with its single element being an empty list.
-
+Lists can also be empty (`[]`) and a special case called a **singleton** list is (`[[]]`), which is a list with its single element being an empty list. Lists in Haskell can also be infinite.
