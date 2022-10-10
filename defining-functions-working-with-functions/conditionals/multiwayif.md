@@ -1,6 +1,6 @@
 # MultiWayIf
 
-**MultiWayIf** allows us to create multiple cases for our if statements **without nesting** them. We define a sequence of expressions that evaluate to either `True` or `False` \(conditions called **guards**\) and associate an expression to each of them:
+**MultiWayIf** allows us to create multiple cases for our if statements **without nesting** them. We define a sequence of expressions that evaluate to either `True` or `False` (conditions called **guards**) and associate an expression with each of them:
 
 ```haskell
 if | <CONDITION1> -> <EXPRESSION1>
@@ -10,9 +10,9 @@ if | <CONDITION1> -> <EXPRESSION1>
    | otherwise    -> <EXPRESSION>
 ```
 
-The symbol `|` can be read as "such that..." or "where...". The guards are evaluated from top to bottom, and the expression associated with the first guard that is `True` is chosen for further evaluation. The `otherwise` function simply always evaluates to `True` and the expression associated with it will always be further evaluated if none of the guards before it evaluate to `True`. It gives us a convenient way to make sure that we have handled all possible cases. It is not necessary to add the `otherwise` guard at the end, but if all the possible cases are not met, we will end up with an error on runtime.
+The symbol `|` can be read as "such that..." or "where...". The guards are evaluated from top to bottom, and the expression associated with the first guard that is `True` is chosen for further evaluation. The `otherwise` function simply always evaluates to `True` and the expression associated with it will always be further evaluated if none of the guards before it evaluates to `True`. It gives us a convenient way to make sure that we have handled all possible cases. It is not necessary to add the `otherwise` guard at the end, but **if all the possible cases are not met, we will end up with an error at runtime**.
 
-One more thing we have to do in order to use the `MultiWayIf` is to **enable the extension** in GHC. GHC has a number of special features like the `MultiWayIf` that are disabled by default so we have to add a line above our module declaration in the following format to enable it:
+One more thing we have to do in order to use the `MultiWayIf` is to **enable the extension** in GHC. GHC has a number of special features that are disabled by default (like the `MultiWayIf`) so we have to add a line above our module declaration in the following format to enable it:
 
 ```haskell
 {-# LANGUAGE MultiWayIf #-} 
@@ -20,7 +20,7 @@ module Practice where
 ...
 ```
 
-Let's switch our `trackScore` function to use `MultiWayIf` instead, but not include the case where `time == avg`. It will result in an error at **runtime** \(not during compilation\), because the case we entered has not been defined:
+Let's switch our `trackScore` function to use `MultiWayIf` instead, but not include the case where `time == avg`. It will result in an error at **runtime** (not during compilation) because the case we entered has not been defined:
 
 ```haskell
 trackScore :: Float -> Float -> String
@@ -51,4 +51,3 @@ trackScore time avgTime =
 ```
 
 This already reads much better than our first implementation with nested `if-statements`, but there is a way to make it even nicer by using **guarded equations**.
-

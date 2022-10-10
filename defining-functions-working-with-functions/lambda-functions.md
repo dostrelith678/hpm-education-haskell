@@ -1,12 +1,12 @@
 # Lambda functions
 
-**Lambda functions** are anonymous \(or nameless\) functions. This means that they can be applied without having an explicit declaration, i.e. the **function declaration and application are merged into one**. Similar to normal functions, the syntax for lambda functions includes its arguments and a function body that specifies how the result is calculated. However, instead of using a name for the function, we use the backslash symbol `"\"` \(similar to the Greek letter lambda – λ\), and instead of the equality symbol, we use the function arrow `"->"`:
+**Lambda functions** are anonymous (or nameless) functions. This means that they can be applied without having an explicit declaration, i.e. the **function declaration and application are merged into one**. Similar to normal functions, the syntax for lambda functions includes its arguments and a function body that specifies how the result is calculated. However, instead of using a name for the function, we use the backslash symbol `"\"` (similar to the Greek letter lambda – λ), and instead of the equality symbol, we use the function arrow `"->"`:
 
 ```haskell
 \<ARGUMENT1> <ARGUMENT2> -> <FUNCTION BODY>
 ```
 
-We can directly use lambda functions just like any other function, so here is how we would use our `triple` function as a lambda function:
+We can directly use lambda functions just like any other function, so here is how we could use our `triple` function as a lambda function:
 
 ```haskell
 ghci> (\x -> x * 3) 4
@@ -26,6 +26,4 @@ trackScore4 time avgTime
     where
       score = (\x y -> abs (x - y)) time avgTime
 ```
-
-
 

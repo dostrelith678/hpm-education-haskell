@@ -13,15 +13,15 @@ squareGt100 :: Int -> Bool
 squareGt100 x = gt100 (square x)
 ```
 
-Because we are applying both `gt100` and `square` functions to the same argument, we can compose them into one and avoid parentheses altogether by applying that composed function to the argument. This is achieved through two function operators, function composition and function application operators:
+Because we are applying both `gt100` and `square` functions to the same argument, we can compose them into one and avoid parentheses altogether by applying that composed function to the argument. This is achieved through two function operators, **function composition** and **function application** operators:
 
-1\) The function composition operator is (.), and it is simply another function that returns a composed function as its result. This is how it is defined in the Prelude:
+1\) The function composition operator is `(.)`, and it is simply another function that returns a composed function as its result. This is how it is defined in the Prelude:
 
 ```haskell
 (.) f g = \x -> f (g x)
 ```
 
-It takes in two functions and returns a nameless lambda function that applies both functions to an argument, so it composes two functions into one. Note that the function composition associates to the right, i.e. the function on the right will be applied first, and then the function on the left will be applied to the result.
+It takes in two functions and returns a nameless lambda function that applies both functions to an argument, so it composes two functions into one. Note that the **function composition associates to the right**, i.e. the function on the right will be applied first, and then the function on the left will be applied to the result.
 
 2\) The function application operator is `($)`, and it simply applies the given function to the given argument. This is how it is defined in the Prelude:
 

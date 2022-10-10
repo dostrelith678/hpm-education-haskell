@@ -1,6 +1,6 @@
 # Case-of Statements
 
-There is another type of conditional statement called `case` which uses matching patterns to determine the expression to be evaluated. If you are familiar with switch statements from imperative programming, this is their equivalent in Haskell. The syntax is:
+There is another type of conditional statement in Haskell - `case`-`of`. It uses pattern matching to determine the expression to be evaluated. If you are familiar with switch statements from imperative programming, this is their equivalent in Haskell. The syntax is:
 
 ```haskell
 case <EXPRESSION> of
@@ -11,7 +11,7 @@ case <EXPRESSION> of
   _          -> <DEFAULT_EXPRESSION>
 ```
 
-The `_` is a **wildcard character**. It is a useful tool for when we do not really care about whatever the value of the expression might be. In this case, whatever that value is – we know what we want to do if none of our previous cases match and assign it the default expression. For example, we could define a function that returns the colour of a playing card based on its suit:
+The `_` is a **wildcard character**. It is a useful tool for when we do not really care about what the value of the expression might be. In this case, whatever that value is – we know what we want to do if none of our previous patterns matches and assign it the default expression. For example, we could define a function that returns the colour of a playing card based on its suit:
 
 ```haskell
 cardColour :: String -> String
@@ -30,4 +30,3 @@ ghci> cardColour "ace"
 ```
 
 That is, for the four valid suits we return their respective colours. Anything else is covered by the wildcard case and no matter what the value is, we always choose the same course of action.
-
