@@ -7,7 +7,7 @@ filter :: (a -> Bool) -> [a] -> [a]
 filter f xs = [x | x <- xs, f x]
 ```
 
-Unlike `map`, the `filter` function must receive a function that returns a boolean as its argument, and the resulting list from `filter` will always be of the same type as the list we passed in as we are only selecting elements from that list, rather than applying the function on them. We can `filter` a list using our `squareGt100` function from before in order to get the elements for which `squareGt100` returns `True`:
+Unlike `map`, the `filter` function must receive a function that returns a boolean as its argument, and the resulting list from `filter` will always be of the same type as the list we passed in because we are only selecting elements from that list, rather than generating new ones. We can `filter` a list using our `squareGt100` function from before in order to get the elements for which `squareGt100` returns `True`:
 
 ```haskell
 ghci> filter squareGt100 [7..12]
@@ -20,12 +20,10 @@ Here are some other examples of using `filter` with other pre-defined functions:
 ghci> filter odd [1..5] -- get all odd numbers from a list
 [1,3,5]
 
-ghci> filter (\x -> length x > 2) ["a", "abc"] -- length greater than 2
+ghci> filter (\x -> length x > 2) ["a", "abc"] -- elements with length greater than 2
 ["abc"]
 
-ghci> filter (\(x:xs) -> x == 'a') ["cardano", "ada"] -- staring with 'a'
+ghci> filter (\(x:xs) -> x == 'a') ["cardano", "ada"] -- elements staring with 'a'
 ["ada"]
 ```
-
-
 
