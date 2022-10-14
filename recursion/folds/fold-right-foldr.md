@@ -31,7 +31,7 @@ Here, it is clear that the function application associates to the right. We can 
 ```haskell
 [1, 2, 3]
 1 : (2 : (3 : [])) -- list construction
-1 + (2 + (3 + 0)) -- foldr (+)
+1 + (2 + (3 + 0))  -- foldr (+)
 ```
 
 And to define a function that calculates the product of a list using `foldr`:
@@ -41,7 +41,7 @@ product :: Num a => [a] -> a
 product = foldr (*) 1
 ```
 
-In this case, our starting value is `1` instead of `0` as we are dealing with multiplication and not addition. Also, note that we have taken `xs` out of the definition from both sides of the equation – this is called **eta reduction** and is used to simplify functions. It takes advantage of partial application of functions so that the function product now returns a curried version of `foldr` that takes in one final argument (the data structure) to be completely applied. It is important to note that the type of the function does not change in its reduced form.
+In this case, our starting value is `1` instead of `0` as we are dealing with multiplication and not addition. Also, note that we have taken `xs` out of the definition from both sides of the equation – this is called **eta reduction** and is used to simplify functions. It takes advantage of the partial application of functions so that the function product now returns a curried version of `foldr` that takes in one final argument (the data structure) to be completely applied. It is important to note that the type of the function does not change in its reduced form.
 
 ```haskell
 product [1, 2, 3]

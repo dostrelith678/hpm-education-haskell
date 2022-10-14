@@ -2,7 +2,7 @@
 
 Let's practice recursion by defining some more recursive functions:
 
-* A function that takes two integers, x and y and raises x to the y power:
+* A function that takes two positive integers, `x` and `y` and **raises `x` to the power of `y`** :
   1.  **Define the type**
 
       We know the function will take two integers and return an integer.
@@ -43,9 +43,7 @@ Let's practice recursion by defining some more recursive functions:
 For practice, write out how this function would be applied step by step. &#x20;
 {% endhint %}
 
-Let's practice recursion by defining some more recursive functions:
-
-* A function that takes in a list and returns a new list with only the even-indexed elements (with the first element considered odd-indexed):
+* A function that takes in a list and **returns a new list with only the even-indexed** **elements** (with the first element considered odd-indexed):
   1.  **Define the type**
 
       We know the function will take in a list of some type and return a list of the same type.

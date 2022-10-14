@@ -22,8 +22,7 @@ Notice that the places of the accumulator value `v` are switched in `foldl` rela
 
 ```haskell
 lengthr :: [a] -> Int
--- list element first, accumulator second
-lengthr = foldr (\_ n -> n + 1) 0
+lengthr = foldr (\_ n -> n + 1) 0  -- list element first, accumulator second
 ghci> lengthr [1, 2, 3]
 3
 ```
@@ -32,8 +31,7 @@ If we want to declare the same function with `foldl`, we have to reverse the arg
 
 ```haskell
 lengthl :: [a] -> Int
- -- accumulator first, list element second
-lengthl = foldl (\n _ -> n + 1) 0
+lengthl = foldl (\n _ -> n + 1) 0  -- accumulator first, list element second
 Prelude> lengthl [1, 2, 3]
 3
 ```

@@ -17,9 +17,9 @@ A good set of steps to follow when defining recursive functions is:
     `sumN 0 = 0` is a simple case and also the base case.
 4.  **Define the other cases**
 
-    Here, we have to think about how to calculate our wanted result using both the recursive call
+    Here, we have to think about how to calculate the wanted result using both the recursive call
 
-    on the function itself and any other functions we might need. For example, in`sumN x = x sumN (x - 1)` we used both the `(+)` and `(-)` functions.
+    on the function itself and any other functions we might need. For example, in `sumN x = x sumN (x - 1)` we used both the `(+)` and `(-)` functions.
 
 
 
