@@ -1,6 +1,6 @@
 # Exercise – Making a Card Deck Type
 
-Let's now try to implement a data type that will represent a deck of cards. First, we can think about what type would be fitting for a card deck – a list of cards would be a good representation. But then what type is fitting for a single card? **Each card should have a rank and a suit** so we can make another type for cards that has the type of a tuple `(Rank, Suit)`. Let's start at the lowest level, the `Rank` and `Suit` type, and remember that we already defined the `Suit` type, but we will now also derive the `Show` class for it:
+Let's now try to implement a data type that will represent a deck of cards. First, we can think about what type would be fitting for a card deck – a list of cards would be a good representation. But then what type is fitting for a single card? **Each card should have a rank and a suit** so we can make another type for cards that has the type of a tuple `(Rank, Suit)`. Let's start at the lowest level, the `Rank` and `Suit` type. Remember that we already defined the `Suit` type, but we will now also derive the `Show` class for it:
 
 ```haskell
 data Suit = Hearts
@@ -59,7 +59,7 @@ Similarly, we can define a deck of cards as a type synonym for a list of `Card` 
 type Deck = [Card]
 ```
 
-We have all the required types for actually building a deck now, so let's make a function for that purpose. We will use list comprehension and take advantage of the fact that `Rank` supports enumeration:
+We have all the required types for actually building a deck now, so let's make a function for that purpose. We will use [list comprehension](../list-comprehensions/list-comprehensions.md) and take advantage of the fact that `Rank` supports [enumeration](basic-classes/enum-enumeration-types.md):
 
 ```haskell
 buildDeck :: Deck
@@ -85,6 +85,4 @@ Clubs),(Jack, Hearts),(Jack, Diamonds),(Jack, Spades),(Jack, Clubs),
 Hearts),(King, Diamonds),(King, Spades),(King, Clubs),(Ace, Hearts),(Ace,
 Diamonds),(Ace, Spades),(Ace, Clubs)]"
 ```
-
-
 

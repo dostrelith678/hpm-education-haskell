@@ -1,6 +1,6 @@
 # Ord – ordered types
 
-The `Ord` class requires any type that wants to be an instance of it to first be an instance of the Eq class by using a class constraint, and additionally, to support the following methods:
+The `Ord` class requires any type that wants to be an instance of it to first be an instance of the `Eq` class by using a **class constraint**, and additionally, to support the following methods:
 
 ```haskell
 class (Eq a) => Ord a where
@@ -43,4 +43,3 @@ class (Eq a) => Ord a where
 ```
 
 All the basic types of Haskell are also instances of the `Ord` class.
-
