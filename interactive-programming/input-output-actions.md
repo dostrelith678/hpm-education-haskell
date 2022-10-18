@@ -6,19 +6,19 @@ Haskell uses a special type `IO` to distinguish impure, input/output actions fro
 IO a
 ```
 
-where `IO` is the type name, and a is the parameterised value that it returns. For example:
+where `IO` is the type name, and `a` is the parameterised value that it returns. For example:
 
 ```haskell
 IO Int -- an action that returns an Int
 IO () -- an action that returns an empty tuple, called a unit
 ```
 
-The last example `IO ()` represents an action that is run solely for its side-effects and simply returns an empty tuple \(a void value or _unit_\). Some **basic actions** in Haskell are:
+The last example `IO ()` represents an action that is run solely for its side effects and simply returns an empty tuple (a void value or _unit_). Some **basic actions** in Haskell are:
 
 ```haskell
-getChar :: IO Char -- reads and returns a character from the screen
+getChar :: IO Char       -- reads and returns a character from the screen
 putChar :: Char -> IO () -- prints a character to the screen
-return :: a -> IO a -- returns a value as an action
+return  :: a -> IO a     -- returns a value as an action
 ```
 
 Note that, strictly speaking, `putChar` and `return` are not actions, but functions that return actions. The `return` function is simply our one-way bridge from the pure world to the impure world that we use when we want to use pure values in actions, which we will see in examples soon. For now, let's just try out the basic actions `getChar` and `putChar` in GHCi:
@@ -37,6 +37,4 @@ a
 ghci> putChar '\n'
 
 ```
-
-
 
