@@ -1,6 +1,6 @@
 # Applicative Functors
 
-The missing functionality of functors is obvious - `fmap` only works for functions that take in exactly 1 argument and applies that function to each individual element of a given data structure. But we might want to apply a function that takes multiple arguments - for example, how can we add together two values of the `Maybe` type? We could write our own function specific to that need:
+The missing functionality of functors is obvious - `fmap` only works for functions that take in exactly 1 argument and apply that function to each individual element of a given data structure. But we might want to apply a function that takes **multiple arguments** - for example, how can we add together two values of the `Maybe` type? We could write our own function specific to that need:
 
 ```haskell
 maybeAdd :: Maybe Int -> Maybe Int -> Maybe Int
@@ -13,19 +13,22 @@ Just 8
 
 But that way we would have to write a new custom-made function for every function we would like to apply to two (or more) `Maybe` types - for example, multiplication.
 
-This is where **Applicative Functors **_****_ (or **Applicatives**) come into play. Applicatives generalise applying pure functions to **effectful** arguments (such as the `Maybe` type) instead of plain values. The effect of the `Maybe` type is the possibility of failure, and we will explore the effects of some other data types later.  The definition of `Applicative` is:
+This is where **Applicative Functors **_****_ (or **Applicatives**) come into play. Applicatives generalise applying pure functions to **effectful** **arguments** (such as the `Maybe` type) instead of plain values. The effect of the `Maybe` type is the possibility of failure, and we will explore the effects of some other data types later.  The definition of `Applicative` is:
 
 ```haskell
 class (Functor f) => Applicative f where
     pure  :: a -> f a
     (<*>) :: f (a -> b) -> f a -> f b
+    
+  -- Minimal complete definition:
+  -- pure, (<*>)
 ```
 
-Firstly, for a type to become an instance of `Applicative` , it must be an instance of the `Functor` class. The `pure` method is used to transform arbitrary values into the functor data structure `f a`. The `(<*>)` method is very similar to that of `fmap` , but in this case, the function being applied is itself wrapped into the functor data structure `f (a -> b)` - this is exactly what allows us to use currying and apply functions that take an unlimited number of arguments on `Applicative` data instances.
+Firstly, for a type to become an instance of `Applicative`, it must be an instance of the `Functor` class. The `pure` method is used to transform arbitrary values into the functor data structure `f a`. The `(<*>)` method is very similar to that of `fmap` , but in this case, the function being applied is itself wrapped into the functor data structure `f (a -> b)` - this is exactly what allows us to use [currying ](../types-in-haskell/function-types/curried-functions.md)and apply functions that take an unlimited number of arguments on `Applicative` data instances.
 
 ### The Maybe Applicative
 
-Let's look at how the `Maybe` type is made an instance of the `Applicative` class in the `Prelude` :
+Let's look at how the `Maybe` type is made an instance of the `Applicative` class in the `Prelude`:
 
 ```haskell
 instance Applicative Maybe where
@@ -71,7 +74,7 @@ Nothing
 
 ### The List Applicative
 
-The `List` applicative is implemented in a way that function application through `(<*>)` applies the function in every possible combination of the arguments (as a Cartesian product in mathematics). So the underlying **effect** of the `List`  type is the possibility of results. The `Applicative` instance declaration for `List` is:
+The `List` applicative is implemented in a way that the function application through `(<*>)` applies the function in every possible combination of the arguments (as a Cartesian product in mathematics). So the underlying **effect** of the `List`  type is the possibility of results. The `Applicative` instance declaration for `List` is:
 
 ```haskell
 instance Applicative [] where
@@ -112,9 +115,9 @@ instance Applicative IO where
         return (f x)
 ```
 
-`pure` is simply our `return` function that wraps a pure value into an `IO` type, and given two impure arguments (`IO` actions), `(<*>)` performs the action `a` to get the function `f` and the action `b` to get the argument `x` , and finally returns `f x` - the result of that function application to the argument wrapped in the `IO` type.
+`pure` is simply our `return` function that wraps a pure value into an `IO` type, and given two impure arguments (`IO` actions), `(<*>)` performs the action `a` to get the function `f` and the action `b` to get the argument `x` , and finally returns `f x` - the result of that function applied to the argument wrapped in the `IO` type.
 
-As was mentioned before, the use of applicative style can handle both **sequencing** and **extraction** of values, so to define a function that reads two characters and returns their concatenation, instead of:
+As was mentioned before, the use of applicative style can handle both **sequencing** and **extraction** of values, so to define a function that reads two lines of characters and returns their concatenation, instead of:
 
 ```haskell
 read2 :: IO String
@@ -136,7 +139,7 @@ Functors
 "ApplicativeFunctors"
 ```
 
-Furthermore, it becomes much easier to create a function that reads an arbitrary `n` number of lines and concatenates them with applicative style and recursion:
+Furthermore, it becomes much easier to create a function that reads an arbitrary `n` number of lines and concatenates them using applicative style and [recursion](broken-reference):
 
 ```haskell
 getLines :: Int -> IO String
@@ -167,11 +170,11 @@ The `Identity` law states that applying the `id` function to an argument in appl
 
 The `Homomorphism` law states that `pure` preserves function application in the sense that applying a pure function to a pure value is the same as calling `pure` on the result of normal _function application_ to that value (`f x`).
 
-The `Interchange` law states that the order in which we evaluate components doesn't matter in the case when we apply an effectful function to a pure argument. The `($ y)` is used to supply the argument `y` to the function `u`. A simpler example of using `($ y)`:
+The `Interchange` law states that the order in which we evaluate components does not matter in the case when we apply an effectful function to a pure argument. The `($ y)` is used to supply the argument `y` to the function `u`. A simpler example of using `($ y)`:
 
 ```haskell
 ghci> map ($ 2) [(2*), (4*), (8*)]
 [4,8,16]
 ```
 
-The `Composition` law states that _function composition_ `(.)` __ works with the `pure` function as well, so that `pure (.)` composes functions, i.e. composing functions `u` and `v` with `pure (.)` and applying the composed function to `w` gives the same result as to simply applying both functions `u` and `v` to the argument `w`.
+The `Composition` law states that _function composition_ `(.)` __ works with the `pure` function as well, so that `pure (.)` composes functions, i.e. composing functions `u` and `v` with `pure (.)` and applying the composed function to `w` gives the same result as simply applying both functions `u` and `v` to the argument `w`.
