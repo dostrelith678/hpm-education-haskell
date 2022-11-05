@@ -1,6 +1,6 @@
 # List Monad
 
-As we already mentioned in the [Applicatives](../applicative-functors.md#the-list-applicative) section, the underlying effect of `Lists` is support for _nondeterministic_ computations. `Maybe` computations can return either `Nothing` or a `Just` value, while `List` computations can return zero, one or multiple values based on their length. Let's see how this is defined in the `Monad` instance of `List`:
+As we already mentioned in the [Applicatives](../applicative-functors.md#the-list-applicative) section, the underlying effect of the `List` type is support for _non-deterministic_ computations. `Maybe` computations can return either `Nothing` or a `Just` value, while `List` computations can return zero, one or multiple values based on their length. Let's see how this is defined in the `Monad` instance of `List`:
 
 ```haskell
 instance Monad [] where
@@ -17,7 +17,7 @@ The bind operator in this case is defined using [list comprehension](../../list-
 
 The `return` method simply takes a value `x` and puts it into a `List` structure `[x]`. The `(>>=)` method for lists extracts all the values `x` from the list `m` and applies the function `f` to each of them, combining all the results in one final list. As with the [`Maybe` monad](maybe-monad.md), the bind operator,  allows us to chain operations together with lists as well. With lists, these chaining operations will combine all output possibilities in a single result list.
 
-Let's take a look at a simple example of chaining list operations together. Imagine we want to model [mitosis](https://en.wikipedia.org/wiki/Mitosis), a process where a single cell divides into two identical daughter cells. First, we will create a function that will simply split a cell in two and call it mitosis:
+Let's take a look at a simple example of chaining list operations together. Imagine we want to model [mitosis](https://en.wikipedia.org/wiki/Mitosis), a process where a single cell divides into two identical daughter cells. First, we create a function `mitosis` that simply splits a cell in two:
 
 ```haskell
 mitosis :: String -> [String] -- we will represent cells with simple strings
