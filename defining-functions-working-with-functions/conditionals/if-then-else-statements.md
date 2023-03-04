@@ -9,10 +9,10 @@ if <CONDITION> then <EXPRESSION1> else <EXPRESSION2>
 where the `CONDITION` must be a **boolean expression**. If the condition evaluates to `True`, then `EXPRESSION1` is used, otherwise, `EXPRESSION2` is used. One other thing to note here is that **both expressions in the if statement must be of the same type**. For example, the statement:
 
 ```haskell
-if True then 1 else 'untrue'
+if True then 1 else "untrue"
 ```
 
-is invalid because the type of `1` is `Int`, but the type of `'untrue'` is `String` (synonym for `[Char]` - a string is simply a list of characters).
+is invalid because the type of `1` is `Int`, but the type of "`untrue"` is `String` (synonym for `[Char]` - a string is simply a list of characters).
 
 Let's take a look at a simple example function using a conditional statement to decide on the final score on a race track given two arguments – the time achieved and the average time for the track in seconds:
 

@@ -1,6 +1,6 @@
 # The Infix Operator
 
-This is a good time to introduce the **infix operator** that helps us make code a bit more readable. Normally, we apply a function by writing `<FUNCTION> <ARGUMENT1> <ARGUMENT2>`, but we could also write it using the infix operator as ``<ARGUMENT1> `<FUNCTION>` <ARGUMENT2>``. This way, we make the code more readable – for example, in the case of`res = mod sum 2`, we can write:
+This is a good time to introduce the **infix operator** that helps us make code a bit more readable. Normally, we apply a function by writing `<FUNCTION> <ARGUMENT1> <ARGUMENT2>`, but we could also write it using the infix operator as ``<ARGUMENT1> `<FUNCTION>` <ARGUMENT2>``. This way, we make the code more readable – for example, in the case of`res = mod sum 2`, we can instead write:
 
 ```haskell
 res = sum `mod` 2 -- using the infix operator ``
