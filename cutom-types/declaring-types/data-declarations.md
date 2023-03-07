@@ -2,6 +2,8 @@
 
 With the keyword `Data`, we can define new types rather than just synonyms for already existing ones. Types declared with `data` are called **algebraic**, referencing **"sum"** and **"product"**. In data types, **"sum"** means _alteration_ (`A | B`, meaning `A` or `B` but not both), and **"product"** means _combination_ (`A B`, meaning `A` and `B` together).
 
+### Sum-types
+
 For example, we can create a type that represents a card suit:
 
 ```haskell
@@ -43,3 +45,72 @@ ghci> suitStr Hearts
 "... of hearts."
 ```
 
+### Product-types
+
+The `Suit` type is an example of a sum-type. Now let's look at an example of a product-type that combines multiple fields together. We can imagine a rectangle, which has two sides `a` and `b`, and to construct a valid rectangle both of them must be provided. We can define the type as:
+
+```haskell
+data Rect = Rect Double Double
+    deriving Show
+```
+
+In this case, the `Rect` on the left side is the type constructor (nullary), and the `Rect` on the right side is the data constructor (binary as it takes two arguments). To create a valid `Rect` type, both `Double` arguments must be joined together:
+
+```haskell
+ghci> a = Rect 2.0 3.0
+ghci> a
+ghci> Rect 2.0 3.0
+```
+
+It is interesting to note that the `Rect` on the right side is a function:
+
+```haskell
+ghci> :type Rect
+ghci> Rect :: Double -> Double -> Rect
+```
+
+This means that even here we can take advantage of partial application:
+
+```haskell
+ghci> a = Rect 2.0
+ghci> :type a
+ghci> a :: Double -> Rect
+```
+
+And we can create functions based on the `Rect` type, for example, calculating the rectangle area:
+
+<pre class="language-haskell"><code class="lang-haskell">area :: Rect -> Double
+area (Rect a b) = a * b
+
+<strong>ghci> area Rect 2.0 3.0
+</strong>ghci> 6.0
+</code></pre>
+
+### Field labels (records)
+
+As you can imagine, with product-types that represent more complex things, such as people or any large set of parameters, the definitions might become unclear from just the list of the arguments in the type. For example, imagine a type to define a company. We would need fields for e.g. the company name, its address, year of foundation, number of employees...
+
+```haskell
+data Company = Company String String Int Int
+```
+
+From the above definition alone, it is hard to intuitively understand which `String` or `Integer` stands for what. A more intuitive way to define complex types is by using the **field labels**:
+
+```haskell
+data Company = Company {
+    cName :: String,
+    cAddress :: String,
+    cYear :: Int,
+    cNre :: Int
+} deriving Show
+```
+
+This is much more user-friendly. In addition, by using field labels, we get automatic _getter_ functions for individual fields:
+
+```haskell
+ghci> c = Company "MyCompany" "25th Street" 1999 26
+ghci> cAddress c
+"25th Street"
+ghci> cYear c
+1999
+```
