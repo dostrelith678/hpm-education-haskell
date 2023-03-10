@@ -93,7 +93,7 @@ Branch (Branch (Leaf 0.5) (Leaf 1.0)) (Branch (Leaf 5.0) (Leaf 10.0))
 
 ## Functor Laws
 
-There are two functor laws that must be satisfied and ensure that `fmap` works as intended:
+There are two functor laws that must be satisfied to ensure that `fmap` works as intended:
 
 ```haskell
 fmap id = id
