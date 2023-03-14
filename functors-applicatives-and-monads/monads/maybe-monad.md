@@ -71,25 +71,25 @@ For the `return` method, we keep the default declaration of `pure` which simply 
 
 We can now re-write our `findAccounts` function in a simpler way using the fact that `Maybe` is a monad:
 
-```haskell
-findAccounts t =
-  findTransaction t >>=
+<pre class="language-haskell"><code class="lang-haskell">findAccounts :: Transaction -> Maybe (Account, Account)
+<strong>findAccounts t =
+</strong>  findTransaction t >>=
     (\tx -> findOriginAccount tx >>=
       (\origin -> findDestinationAccount tx >>=
         (\destination -> return (origin, destination) )))
-```
+</code></pre>
 
 That reads much better - we don't have to take care of every `Nothing` possibility as the monadic aspect of `Maybe` takes care of this for us. One thing to note is that the `tx` argument is available at any step below the first "bind" as all the lambda functions bind to one another in a sequence. The same applies to the `origin` argument which we only use in the last step in order to `return` our result.
 
 Does this kind of sequencing remind you of something we saw before? We used the `do` notation with [I/O actions](../../interactive-programming/sequencing-actions.md) to perform multiple actions in a sequence. As it turns out, the `do` notation is not specific to I/O actions but is actually just an alternative monad syntax and can be used with any monad. We can therefore re-write `findAccounts` using `do` notation:
 
-```haskell
-findAccounts t =
-  do
-    tx          <- findTransaction t
-    origin      <- findOriginAccount tx
-    destination <-findDestinationAccount tx 
+<pre class="language-haskell"><code class="lang-haskell">findAccounts :: Transaction -> Maybe (Account, Account)
+<strong>findAccounts t =
+</strong>  do
+    tx          &#x3C;- findTransaction t
+    origin      &#x3C;- findOriginAccount tx
+    destination &#x3C;- findDestinationAccount tx 
     return (origin, destination)
-```
+</code></pre>
 
 This now looks much more like an imperative language and we could say it actually is, but with the imperative language being written is the `Maybe` language, which supports exceptions. `findTransaction`, `findOriginAccount` and `findDestinationAccount` are all statements in the imperative language of the `Maybe` monad. And this extends to all monads so that a value of type `M a` is interpreted as a statement in an imperative language of `M` , with the semantics of that language being determined by the underlying monad `M` .
