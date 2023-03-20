@@ -6,10 +6,7 @@
 
 * [Functions](introduction/functions.md)
 * [Functional Programming vs Imperative Programming](introduction/functional-programming-vs-imperative-programming.md)
-* [Installing Haskell](introduction/installing-haskell/README.md)
-  * [Mac](introduction/installing-haskell/mac.md)
-  * [Linux](introduction/installing-haskell/linux.md)
-  * [Windows](introduction/installing-haskell/windows.md)
+* [Installing Haskell](introduction/installing-haskell.md)
 * [Haskell Modules](introduction/haskell-modules.md)
 * [Loading Modules into GHCi](introduction/loading-modules-into-ghci.md)
 * [Expressions](introduction/expressions.md)
@@ -62,8 +59,8 @@
 * [4 Steps to Defining Recursive Functions](recursion/4-steps-to-defining-recursive-functions.md)
 * [Recursion Practice](recursion/recursion-practice.md)
 * [Folds](recursion/folds/README.md)
-  * [Fold Right \(foldr\)](recursion/folds/fold-right-foldr.md)
-  * [Fold Left \(foldl\)](recursion/folds/fold-left-foldl.md)
+  * [Fold Right (foldr)](recursion/folds/fold-right-foldr.md)
+  * [Fold Left (foldl)](recursion/folds/fold-left-foldl.md)
 
 ## Cutom Types
 
@@ -103,7 +100,6 @@
   * [Maybe Monad](functors-applicatives-and-monads/monads/maybe-monad.md)
   * [List Monad](functors-applicatives-and-monads/monads/list-monad.md)
 
----
+***
 
 * [References / Further Reading](references.md)
-
