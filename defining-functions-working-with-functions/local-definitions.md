@@ -38,7 +38,7 @@ sumSquaresM5 x y =
   where
     a = x ^ 2
     b = y ^ 2
-    res = mod sum 2 -- the "sum" expression from let-in is not accessible here
+    res = mod sum 5 -- the "sum" expression from let-in is not accessible here
 ```
 
 The compilation of the above would result in an error as `sum` is only accessible in the `in` clause of the code. This means that with `let`-`in` we can create **super-localised expressions** that aren't accessible anywhere outside the `in` code block.

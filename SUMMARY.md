@@ -6,7 +6,7 @@
 
 * [Functions](introduction/functions.md)
 * [Functional Programming vs Imperative Programming](introduction/functional-programming-vs-imperative-programming.md)
-* [Installing Haskell](introduction/installing-haskell.md)
+* [Installing Haskell](introduction/installing-haskell/README.md)
 * [Haskell Modules](introduction/haskell-modules.md)
 * [Loading Modules into GHCi](introduction/loading-modules-into-ghci.md)
 * [Expressions](introduction/expressions.md)
