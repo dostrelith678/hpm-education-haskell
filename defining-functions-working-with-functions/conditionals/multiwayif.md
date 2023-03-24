@@ -27,8 +27,8 @@ trackScore :: Float -> Float -> String
 trackScore time avgTime = 
   if | time < avgTime -> "Great! Your time is " ++ show (avgTime - time) 
          ++ " seconds below average!"
-     | time > avgTime -> "Your time is " ++ show (time - avgTime) ++ " 
-         20seconds above average."
+     | time > avgTime -> "Your time is " ++ show (time - avgTime)
+         ++ " seconds above average."
 
 ghci> :r
 [1 of 1] Compiling Practice ( practice.hs, interpreted )
