@@ -13,7 +13,7 @@ Just 8
 
 But that way we would have to write a new custom-made function for every function we would like to apply to two (or more) `Maybe` types - for example, multiplication.
 
-This is where **Applicative Functors **_****_ (or **Applicatives**) come into play. Applicatives generalise applying pure functions to **effectful** **arguments** (such as the `Maybe` type) instead of plain values. The effect of the `Maybe` type is the possibility of failure, and we will explore the effects of some other data types later.  The definition of `Applicative` is:
+This is where **Applicative Functors **_****_ (or **Applicatives**) come into play. Applicatives generalise applying pure functions to **effectful** **arguments** (such as the `Maybe` type) instead of plain values. The definition of `Applicative` is:
 
 ```haskell
 class (Functor f) => Applicative f where
@@ -28,7 +28,7 @@ Firstly, for a type to become an instance of `Applicative`, it must be an instan
 
 ### The Maybe Applicative
 
-Let's look at how the `Maybe` type is made an instance of the `Applicative` class in the `Prelude`:
+The effect of the `Maybe` type is the possibility of failure, and we will explore the effects of some other data types later. Let's look at how the `Maybe` type is made an instance of the `Applicative` class in the `Prelude`:
 
 ```haskell
 instance Applicative Maybe where
@@ -74,7 +74,7 @@ Nothing
 
 ### The List Applicative
 
-The `List` applicative is implemented in a way that the function application through `(<*>)` applies the function in every possible combination of the arguments (as a Cartesian product in mathematics). So the underlying **effect** of the `List`  type is the possibility of results. The `Applicative` instance declaration for `List` is:
+The `List` applicative is implemented in a way that the function application through `(<*>)` applies the function in every possible combination of the arguments (as a Cartesian product in mathematics). So the underlying **effect** of the `List`  type is the possibility of non-deterministic results. The `Applicative` instance declaration for `List` is:
 
 ```haskell
 instance Applicative [] where

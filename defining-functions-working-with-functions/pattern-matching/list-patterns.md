@@ -51,4 +51,4 @@ ghci> tail []
 *** Exception: Prelude.tail: empty list
 ```
 
-That case is simply not defined in the functions – so we know that **pattern matching does not have to be exhaustive, but Haskell will throw an exception when a function is called and no patterns are matched**.
+That case is covered by throwing an error since empty lists have neither a head nor a tail.
