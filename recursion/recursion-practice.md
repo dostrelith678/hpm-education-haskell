@@ -36,7 +36,7 @@ Let's practice recursion by defining some more recursive functions:
       multiplied by the result of the recursive call to the function with `(y - 1)`
 
       ```
-      power x y = x * power x (y -1)
+      power x y = x * power x (y - 1)
       ```
 
 {% hint style="info" %}
@@ -73,7 +73,7 @@ For practice, write out how this function would be applied step by step. &#x20;
       That last case we laid out is where the list has two or more elements. In this case, we should ignore the first element, take the second one and join it with the result of the recursive call of the remaining list.
 
       ```
-      evens (_ : x : xs) = x : evens x
+      evens (_ : x : xs) = x : evens xs
       ```
 
 {% hint style="info" %}
