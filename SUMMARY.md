@@ -99,6 +99,7 @@
 * [Monads](functors-applicatives-and-monads/monads/README.md)
   * [Maybe Monad](functors-applicatives-and-monads/monads/maybe-monad.md)
   * [List Monad](functors-applicatives-and-monads/monads/list-monad.md)
+  * [Monad Laws](functors-applicatives-and-monads/monads/monad-laws.md)
 
 ***
 
